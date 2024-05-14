@@ -12,7 +12,7 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN python3 -m pip install -U wheel cython \
- && python3 -m pip install -U liquidctl \
+ && python3 -m pip install git+https://github.com/liquidctl/liquidctl#egg=liquidctl \
  && apt remove --purge -y make gcc python3-dev libudev-dev python3-pip \
  && apt autoremove -y \
  && chmod 0700 /run.sh \
